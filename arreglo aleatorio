@@ -1,0 +1,47 @@
+import java.util.Random;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+
+        ArregloOrdenamiento arreglo1 = new ArregloOrdenamiento(10);
+
+        arreglo1.llenarAleatorio(20);
+        System.out.println(arreglo1);
+
+        arreglo1.bubbleSort();
+        System.out.println(arreglo1);
+    }
+}
+
+class ArregloOrdenamiento {
+
+    private int[] datos;
+
+    public ArregloOrdenamiento(int cantidad) {
+        datos = new int[cantidad];
+    }
+
+    public void bubbleSort() {
+        for (int i = 0; i < datos.length - 1; i++) {
+            for (int j = 0; j < datos.length - 1 - i; j++) {
+                if (datos[j] > datos[j + 1]) {
+                    int temp = datos[j];
+                    datos[j] = datos[j + 1];
+                    datos[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    public void llenarAleatorio(int limite) {
+        Random r = new Random();
+        for (int i = 0; i < datos.length; i++) {
+            datos[i] = r.nextInt(limite);
+        }
+    }
+
+    public String toString() {
+        return Arrays.toString(datos);
+    }
+}
