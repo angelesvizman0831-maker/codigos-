@@ -1,0 +1,63 @@
+mport java.util.Random;
+import java.util.Arrays;
+
+public class ArregloOrdenamiento {
+
+    private int[] datos;
+
+    // Constructor 1
+    public ArregloOrdenamiento(int cantidad) {
+        datos = new int[cantidad];
+    }
+
+    // Constructor 2
+    public ArregloOrdenamiento(int[] datos) {
+        this.datos = datos;
+    }
+
+    // Ordenamiento burbuja
+    public void bubbleSort() {
+        for (int pasada = 0; pasada < datos.length - 1; pasada++) {
+            for (int i = 0; i < datos.length - 1 - pasada; i++) {
+                if (datos[i] > datos[i + 1]) {
+                    int temp = datos[i];
+                    datos[i] = datos[i + 1];
+                    datos[i + 1] = temp;
+                }
+            }
+        }
+    }
+
+    // Ordenamiento por selección
+    public void selectionSort() {
+        int n = datos.length;
+
+        for (int i = 0; i < n - 1; i++) {
+            int indiceMinimo = i;
+
+            for (int j = i + 1; j < n; j++) {
+                if (datos[j] < datos[indiceMinimo]) {
+                    indiceMinimo = j;
+                }
+            }
+
+            // Intercambio (swap)
+            int temp = datos[indiceMinimo];
+            datos[indiceMinimo] = datos[i];
+            datos[i] = temp;
+        }
+    }
+
+    // Llenar arreglo con números aleatorios
+    public void llenarAleatorio(int limite) {
+        Random random = new Random();
+        for (int i = 0; i < datos.length; i++) {
+            datos[i] = random.nextInt(limite);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(datos);
+    }
+}
