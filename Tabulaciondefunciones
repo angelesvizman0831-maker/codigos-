@@ -1,0 +1,53 @@
+/*
+
+tabulación de función
+
+*/
+
+
+
+import java.text.DecimalFormat;
+
+
+
+public class MyClass {
+
+  public static void main(String[] args) {
+
+    int x, y;
+
+    double f;
+
+
+
+    DecimalFormat salida = new DecimalFormat("#.####");
+
+
+
+    System.out.println("x\t y\t f(x,y)");
+
+    System.out.println("---------------------------");
+
+
+
+    for (x = 2; x <= 8; x += 2) {
+
+      for (y = 6; y <= 21; y += 3) {
+
+
+
+        f = (double) (x * x - y * y) / (x * x + y * y);
+
+
+
+        System.out.println(x + "\t" + y + "\t" + salida.format(f));
+
+      }
+
+      System.out.println();
+
+    }
+
+  }
+
+}
