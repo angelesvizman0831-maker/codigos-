@@ -1,0 +1,11 @@
+import java.util.Random;
+
+public static void arregloAleatorio() {
+    Random rand = new Random();
+    int[] numeros = new int[20];
+
+    for (int i = 0; i < numeros.length; i++) {
+        numeros[i] = rand.nextInt(6) + 1; // 1 a 6
+        System.out.print(numeros[i] + " ");
+    }
+}
