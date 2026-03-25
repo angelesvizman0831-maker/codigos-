@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class ProductoPunto {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n;
+        System.out.print("Ingresa el tamaño de los vectores: ");
+        n = sc.nextInt();
+
+        int[] A = new int[n];
+        int[] B = new int[n];
+
+        // Llenar vector A
+        System.out.println("Ingresa los valores del vector A:");
+        for (int i = 0; i < n; i++) {
+            System.out.print("A[" + i + "]: ");
+            A[i] = sc.nextInt();
+        }
+
+        // Llenar vector B
+        System.out.println("Ingresa los valores del vector B:");
+        for (int i = 0; i < n; i++) {
+            System.out.print("B[" + i + "]: ");
+            B[i] = sc.nextInt();
+        }
+
+        // Calcular producto punto
+        int producto = 0;
+        for (int i = 0; i < n; i++) {
+            producto += A[i] * B[i];
+        }
+
+        // Resultado
+        System.out.println("El producto punto es: " + producto);
+
+        sc.close();
+    }
+}
+
+
+
+
+public class ProductoPuntoSimple {
+    public static void main(String[] args) {
+
+        int[] A = {1, 2, 3};
+        int[] B = {4, 5, 6};
+
+        int resultado = 0;
+
+        for (int i = 0; i < A.length; i++) {
+            resultado += A[i] * B[i];
+        }
+
+        System.out.println("Producto punto: " + resultado);
+    }
+}
