@@ -1,0 +1,9 @@
+public static double promedio(int[] notas) {
+    if (notas.length == 0) return 0;
+
+    int suma = 0;
+    for (int n : notas) {
+        suma += n;
+    }
+    return (double) suma / notas.length;
+}
