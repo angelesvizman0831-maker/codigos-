@@ -1,0 +1,25 @@
+public class Calificaciones {
+
+    public static double porcentajeAprobados(int[] notas) {
+        if (notas == null || notas.length == 0) {
+            return 0;
+        }
+
+        int aprobados = 0;
+
+        for (int nota : notas) {
+            if (nota >= 6) {
+                aprobados++;
+            }
+        }
+
+        return (aprobados * 100.0) / notas.length;
+    }
+
+    public static void main(String[] args) {
+        int[] calificaciones = {5, 7, 8, 4, 10, 6, 3};
+        double porcentaje = porcentajeAprobados(calificaciones);
+
+        System.out.println("Porcentaje de aprobados: " + porcentaje + "%");
+    }
+}
