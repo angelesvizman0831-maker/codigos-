@@ -1,0 +1,15 @@
+public static void contarParesImpares(int[] arr) {
+    int pares = 0;
+    int impares = 0;
+
+    for (int n : arr) {
+        if (n % 2 == 0) {
+            pares++;
+        } else {
+            impares++;
+        }
+    }
+
+    System.out.println("Pares: " + pares);
+    System.out.println("Impares: " + impares);
+}
