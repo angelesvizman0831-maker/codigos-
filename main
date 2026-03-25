@@ -1,0 +1,16 @@
+public static void main(String[] args) {
+    int[] datos = {5, 8, 3, 10, 2, 7};
+
+    System.out.println("Promedio: " + promedio(datos));
+
+    arregloAleatorio();
+
+    ordenar(datos);
+    System.out.print("\nOrdenado: ");
+    for (int n : datos) System.out.print(n + " ");
+
+    System.out.println();
+    contarParesImpares(datos);
+
+    System.out.println("Mayor: " + mayor(datos));
+}
